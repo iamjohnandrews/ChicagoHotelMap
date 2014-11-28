@@ -1,0 +1,469 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7FD005B81A29187E00256892 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD005B71A29187E00256892 /* main.m */; };
+		7FD005BB1A29187E00256892 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD005BA1A29187E00256892 /* AppDelegate.m */; };
+		7FD005C11A29187E00256892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FD005BF1A29187E00256892 /* Main.storyboard */; };
+		7FD005C31A29187E00256892 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FD005C21A29187E00256892 /* Images.xcassets */; };
+		7FD005C61A29187E00256892 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD005C41A29187E00256892 /* LaunchScreen.xib */; };
+		7FD005D21A29187F00256892 /* ChicagoHotelsCodeChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD005D11A29187F00256892 /* ChicagoHotelsCodeChallengeTests.m */; };
+		7FD005E01A2919F000256892 /* ListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD005DF1A2919F000256892 /* ListTableViewCell.m */; };
+		7FD005E31A291A0200256892 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD005E21A291A0200256892 /* ListViewController.m */; };
+		7FD005E61A291A1300256892 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD005E51A291A1300256892 /* MapViewController.m */; };
+		7FD005E91A291A2400256892 /* Hotel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD005E81A291A2400256892 /* Hotel.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7FD005CC1A29187F00256892 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7FD005AA1A29187E00256892 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7FD005B11A29187E00256892;
+			remoteInfo = ChicagoHotelsCodeChallenge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7FD005B21A29187E00256892 /* ChicagoHotelsCodeChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChicagoHotelsCodeChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FD005B61A29187E00256892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FD005B71A29187E00256892 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7FD005B91A29187E00256892 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7FD005BA1A29187E00256892 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7FD005C01A29187E00256892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7FD005C21A29187E00256892 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7FD005C51A29187E00256892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		7FD005CB1A29187F00256892 /* ChicagoHotelsCodeChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChicagoHotelsCodeChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FD005D01A29187F00256892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FD005D11A29187F00256892 /* ChicagoHotelsCodeChallengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChicagoHotelsCodeChallengeTests.m; sourceTree = "<group>"; };
+		7FD005DE1A2919F000256892 /* ListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewCell.h; sourceTree = "<group>"; };
+		7FD005DF1A2919F000256892 /* ListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewCell.m; sourceTree = "<group>"; };
+		7FD005E11A291A0200256892 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		7FD005E21A291A0200256892 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		7FD005E41A291A1300256892 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		7FD005E51A291A1300256892 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		7FD005E71A291A2400256892 /* Hotel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hotel.h; sourceTree = "<group>"; };
+		7FD005E81A291A2400256892 /* Hotel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hotel.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7FD005AF1A29187E00256892 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FD005C81A29187F00256892 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7FD005A91A29187E00256892 = {
+			isa = PBXGroup;
+			children = (
+				7FD005B41A29187E00256892 /* ChicagoHotelsCodeChallenge */,
+				7FD005CE1A29187F00256892 /* ChicagoHotelsCodeChallengeTests */,
+				7FD005B31A29187E00256892 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7FD005B31A29187E00256892 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7FD005B21A29187E00256892 /* ChicagoHotelsCodeChallenge.app */,
+				7FD005CB1A29187F00256892 /* ChicagoHotelsCodeChallengeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7FD005B41A29187E00256892 /* ChicagoHotelsCodeChallenge */ = {
+			isa = PBXGroup;
+			children = (
+				7FD005B91A29187E00256892 /* AppDelegate.h */,
+				7FD005BA1A29187E00256892 /* AppDelegate.m */,
+				7FD005BF1A29187E00256892 /* Main.storyboard */,
+				7FD005DD1A2919C200256892 /* View */,
+				7FD005DC1A2919B700256892 /* Controller */,
+				7FD005DB1A2919AE00256892 /* Model */,
+				7FD005C21A29187E00256892 /* Images.xcassets */,
+				7FD005C41A29187E00256892 /* LaunchScreen.xib */,
+				7FD005B51A29187E00256892 /* Supporting Files */,
+			);
+			path = ChicagoHotelsCodeChallenge;
+			sourceTree = "<group>";
+		};
+		7FD005B51A29187E00256892 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7FD005B61A29187E00256892 /* Info.plist */,
+				7FD005B71A29187E00256892 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7FD005CE1A29187F00256892 /* ChicagoHotelsCodeChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				7FD005D11A29187F00256892 /* ChicagoHotelsCodeChallengeTests.m */,
+				7FD005CF1A29187F00256892 /* Supporting Files */,
+			);
+			path = ChicagoHotelsCodeChallengeTests;
+			sourceTree = "<group>";
+		};
+		7FD005CF1A29187F00256892 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7FD005D01A29187F00256892 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7FD005DB1A2919AE00256892 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7FD005E71A291A2400256892 /* Hotel.h */,
+				7FD005E81A291A2400256892 /* Hotel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		7FD005DC1A2919B700256892 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7FD005E11A291A0200256892 /* ListViewController.h */,
+				7FD005E21A291A0200256892 /* ListViewController.m */,
+				7FD005E41A291A1300256892 /* MapViewController.h */,
+				7FD005E51A291A1300256892 /* MapViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		7FD005DD1A2919C200256892 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7FD005DE1A2919F000256892 /* ListTableViewCell.h */,
+				7FD005DF1A2919F000256892 /* ListTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7FD005B11A29187E00256892 /* ChicagoHotelsCodeChallenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FD005D51A29187F00256892 /* Build configuration list for PBXNativeTarget "ChicagoHotelsCodeChallenge" */;
+			buildPhases = (
+				7FD005AE1A29187E00256892 /* Sources */,
+				7FD005AF1A29187E00256892 /* Frameworks */,
+				7FD005B01A29187E00256892 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChicagoHotelsCodeChallenge;
+			productName = ChicagoHotelsCodeChallenge;
+			productReference = 7FD005B21A29187E00256892 /* ChicagoHotelsCodeChallenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7FD005CA1A29187F00256892 /* ChicagoHotelsCodeChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FD005D81A29187F00256892 /* Build configuration list for PBXNativeTarget "ChicagoHotelsCodeChallengeTests" */;
+			buildPhases = (
+				7FD005C71A29187F00256892 /* Sources */,
+				7FD005C81A29187F00256892 /* Frameworks */,
+				7FD005C91A29187F00256892 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7FD005CD1A29187F00256892 /* PBXTargetDependency */,
+			);
+			name = ChicagoHotelsCodeChallengeTests;
+			productName = ChicagoHotelsCodeChallengeTests;
+			productReference = 7FD005CB1A29187F00256892 /* ChicagoHotelsCodeChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7FD005AA1A29187E00256892 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "John Andrews";
+				TargetAttributes = {
+					7FD005B11A29187E00256892 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					7FD005CA1A29187F00256892 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 7FD005B11A29187E00256892;
+					};
+				};
+			};
+			buildConfigurationList = 7FD005AD1A29187E00256892 /* Build configuration list for PBXProject "ChicagoHotelsCodeChallenge" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7FD005A91A29187E00256892;
+			productRefGroup = 7FD005B31A29187E00256892 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7FD005B11A29187E00256892 /* ChicagoHotelsCodeChallenge */,
+				7FD005CA1A29187F00256892 /* ChicagoHotelsCodeChallengeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7FD005B01A29187E00256892 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FD005C11A29187E00256892 /* Main.storyboard in Resources */,
+				7FD005C61A29187E00256892 /* LaunchScreen.xib in Resources */,
+				7FD005C31A29187E00256892 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FD005C91A29187F00256892 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7FD005AE1A29187E00256892 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FD005E91A291A2400256892 /* Hotel.m in Sources */,
+				7FD005E01A2919F000256892 /* ListTableViewCell.m in Sources */,
+				7FD005BB1A29187E00256892 /* AppDelegate.m in Sources */,
+				7FD005E61A291A1300256892 /* MapViewController.m in Sources */,
+				7FD005E31A291A0200256892 /* ListViewController.m in Sources */,
+				7FD005B81A29187E00256892 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FD005C71A29187F00256892 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FD005D21A29187F00256892 /* ChicagoHotelsCodeChallengeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7FD005CD1A29187F00256892 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7FD005B11A29187E00256892 /* ChicagoHotelsCodeChallenge */;
+			targetProxy = 7FD005CC1A29187F00256892 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7FD005BF1A29187E00256892 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FD005C01A29187E00256892 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7FD005C41A29187E00256892 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FD005C51A29187E00256892 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7FD005D31A29187F00256892 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7FD005D41A29187F00256892 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7FD005D61A29187F00256892 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ChicagoHotelsCodeChallenge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7FD005D71A29187F00256892 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ChicagoHotelsCodeChallenge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7FD005D91A29187F00256892 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ChicagoHotelsCodeChallengeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChicagoHotelsCodeChallenge.app/ChicagoHotelsCodeChallenge";
+			};
+			name = Debug;
+		};
+		7FD005DA1A29187F00256892 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ChicagoHotelsCodeChallengeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChicagoHotelsCodeChallenge.app/ChicagoHotelsCodeChallenge";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7FD005AD1A29187E00256892 /* Build configuration list for PBXProject "ChicagoHotelsCodeChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FD005D31A29187F00256892 /* Debug */,
+				7FD005D41A29187F00256892 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FD005D51A29187F00256892 /* Build configuration list for PBXNativeTarget "ChicagoHotelsCodeChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FD005D61A29187F00256892 /* Debug */,
+				7FD005D71A29187F00256892 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7FD005D81A29187F00256892 /* Build configuration list for PBXNativeTarget "ChicagoHotelsCodeChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FD005D91A29187F00256892 /* Debug */,
+				7FD005DA1A29187F00256892 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7FD005AA1A29187E00256892 /* Project object */;
+}
