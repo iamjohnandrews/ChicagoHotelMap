@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ListViewController : UIViewController
+@interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@property (strong, nonatomic) NSArray *hotelInfo;
+@property (weak, nonatomic) IBOutlet UITableView *hotelListTableView;
 
 @end

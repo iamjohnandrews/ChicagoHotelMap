@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ListTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *hotelImageView;
+@property (weak, nonatomic) IBOutlet UILabel *hotelNameLabel;
 
 @end

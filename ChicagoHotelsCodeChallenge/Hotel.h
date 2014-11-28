@@ -9,5 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface Hotel : NSObject
-
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *starRating;
+@property (strong, nonatomic) NSString *nightlyRate;
+@property (strong, nonatomic) NSNumber *longitude;
+@property (strong, nonatomic) NSNumber *latitude;
+@property (strong, nonatomic) NSString *thumbnailURL;
+@property (strong, nonatomic) NSString *streetAddress;
+@property (strong, nonatomic) NSNumber *reviewScore;
 @end
