@@ -12,7 +12,6 @@
 #import "UIImageView+WebCache.h"
 
 @interface MapViewController ()
-@property (strong, nonatomic) CLLocationManager *locationManager;
 @end
 
 @implementation MapViewController
@@ -24,31 +23,14 @@
     ListViewController *listVC = [[self.tabBarController viewControllers] firstObject];
     self.hotelInfo = listVC.hotelInfo;
     
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    self.mapView.showsUserLocation = YES;
-    
     self.mapView.delegate = self;
     self.mapView.rotateEnabled = NO;
     
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManager.delegate = self;
-    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-        [self.locationManager requestWhenInUseAuthorization];
-    }
-    [self.locationManager startUpdatingLocation];
-    
-    [self.mapView addAnnotations:[self convertHotelObjectsIntoCoordinates:self.hotelInfo]];
+    NSArray *mapAnnotations = [self convertHotelObjectsIntoCoordinates:self.hotelInfo];
+    [self.mapView addAnnotations:mapAnnotations];
+    [self.mapView showAnnotations:mapAnnotations animated:YES];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    self.mapView.showsUserLocation = NO;
-}
 
 - (NSArray *)convertHotelObjectsIntoCoordinates:(NSArray *)hotelObjects
 {
@@ -66,12 +48,6 @@
 }
 
 #pragma MapKit Delegate methods
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
-{
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 400, 400);
-    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
-    
-}
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
@@ -80,7 +56,7 @@
         aView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"hotel"];
         aView.canShowCallout = YES;
         
-        UIImageView *hotelImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 46.0f, 46.0f)];
+        UIImageView *hotelImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50.0f, 50.0f)];
         aView.leftCalloutAccessoryView = hotelImageView;
         
         // Add a detail disclosure button to the callout.

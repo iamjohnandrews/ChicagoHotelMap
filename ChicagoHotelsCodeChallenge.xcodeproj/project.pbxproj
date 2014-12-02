@@ -19,7 +19,6 @@
 		7FD005E91A291A2400256892 /* Hotel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD005E81A291A2400256892 /* Hotel.m */; };
 		7FD005EB1A291C2700256892 /* hotels.json in Resources */ = {isa = PBXBuildFile; fileRef = 7FD005EA1A291C2700256892 /* hotels.json */; };
 		7FD005ED1A29204800256892 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD005EC1A29204800256892 /* MapKit.framework */; };
-		7FD005EF1A2921C500256892 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD005EE1A2921C500256892 /* CoreLocation.framework */; };
 		D02786659B32417A92D2E018 /* libPods-ChicagoHotelsCodeChallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F338F18D3E4476B27EE8BC /* libPods-ChicagoHotelsCodeChallenge.a */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FD005EF1A2921C500256892 /* CoreLocation.framework in Frameworks */,
 				7FD005ED1A29204800256892 /* MapKit.framework in Frameworks */,
 				D02786659B32417A92D2E018 /* libPods-ChicagoHotelsCodeChallenge.a in Frameworks */,
 			);
