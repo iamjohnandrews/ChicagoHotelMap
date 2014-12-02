@@ -65,14 +65,6 @@
     return hotelObjectsArray;
 }
 
-- (void)displaySpinnerAsDataLoadsFor:(UITableViewCell *)cell
-{
-    self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    self.spinner.hidesWhenStopped = YES;
-    cell.accessoryView = self.spinner;
-    [self.spinner startAnimating];
-}
-
 #pragma mark - TableView Methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -86,30 +78,33 @@
     Hotel *individualHotel = self.hotelInfo[indexPath.row];
     listCell.hotelNameLabel.text = individualHotel.name;
     
-    
-    if (!listCell.hotelImageView.image) {
-        [self displaySpinnerAsDataLoadsFor:listCell];
+    UIActivityIndicatorView *spinner;
+    SDWebImageManager *manager = [SDWebImageManager sharedManager];
+    if (![manager diskImageExistsForURL:[NSURL URLWithString:individualHotel.thumbnailURL]]) {
+        spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        spinner.hidesWhenStopped = YES;
+        listCell.accessoryView = spinner;
+        [spinner startAnimating];
     }
     [listCell.hotelImageView sd_setImageWithURL:[NSURL URLWithString:individualHotel.thumbnailURL]
                                            completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-//                                               listCell.hotelImageView.image = image;
-                                               listCell.hotelImageView.image = [self imageWithImage:image scaledToSize:CGSizeMake(80, 59)];
-                                               listCell.hotelImageView.clipsToBounds = YES;
-                                               [self.spinner stopAnimating];
+                                               listCell.hotelImageView.image = [self imageWithImage:image];
+                                               [spinner stopAnimating];
                                            }];
     
     
     return listCell;
 }
 
-- (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
-    //UIGraphicsBeginImageContext(newSize);
-    // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).
-    // Pass 1.0 to force exact pixel size.
+- (UIImage *)imageWithImage:(UIImage *)image
+{
+    CGSize newSize = CGSizeMake(80.0f, 60.0f);
+    
     UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
     [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+    
     return newImage;
 }
 
