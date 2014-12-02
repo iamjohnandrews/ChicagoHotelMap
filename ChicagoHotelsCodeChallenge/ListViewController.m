@@ -27,6 +27,11 @@
     self.hotelImagesArray = [NSMutableArray array];
 }
 
+-(BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
 - (NSArray *)getHotelData
 {
     NSString *filePath=[[NSBundle mainBundle] pathForResource:@"hotels" ofType:@"json"];
@@ -81,17 +86,31 @@
     Hotel *individualHotel = self.hotelInfo[indexPath.row];
     listCell.hotelNameLabel.text = individualHotel.name;
     
+    
     if (!listCell.hotelImageView.image) {
         [self displaySpinnerAsDataLoadsFor:listCell];
     }
     [listCell.hotelImageView sd_setImageWithURL:[NSURL URLWithString:individualHotel.thumbnailURL]
                                            completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                               listCell.hotelImageView.image = image;
+//                                               listCell.hotelImageView.image = image;
+                                               listCell.hotelImageView.image = [self imageWithImage:image scaledToSize:CGSizeMake(80, 59)];
+                                               listCell.hotelImageView.clipsToBounds = YES;
                                                [self.spinner stopAnimating];
                                            }];
     
     
     return listCell;
+}
+
+- (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    //UIGraphicsBeginImageContext(newSize);
+    // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).
+    // Pass 1.0 to force exact pixel size.
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
 }
 
 /*

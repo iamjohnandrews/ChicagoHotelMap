@@ -12,10 +12,11 @@
 
 - (void)awakeFromNib {
     // Initialization code
-//    self.hotelImageView.clipsToBounds = YES;
-//    self.hotelImageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.hotelImageView.clipsToBounds = YES;
+    self.hotelImageView.contentMode = UIViewContentModeTopLeft;
     
 //    [self setupGradient];
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
