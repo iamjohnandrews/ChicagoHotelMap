@@ -78,33 +78,47 @@
     MKAnnotationView *aView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"hotel"];
     if (!aView) {
         aView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"hotel"];
+        aView.canShowCallout = YES;
+        
+        UIImageView *hotelImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 46.0f, 46.0f)];
+        aView.leftCalloutAccessoryView = hotelImageView;
+        
+        // Add a detail disclosure button to the callout.
+        UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        aView.rightCalloutAccessoryView = rightButton;
     }
-    
-    // If an existing pin view was not available, create one.
-    aView.canShowCallout = YES;
-//    aView.image = [UIImage imageNamed:@"pizza_slice_32.png"];
-//    aView.calloutOffset = CGPointMake(0, 32);
-    
-    // Add a detail disclosure button to the callout.
-    UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    aView.rightCalloutAccessoryView = rightButton;
-    
-    // Add an image to the left callout.
-//    UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pizza_slice_32.png"]];
-    NSUInteger index = [mapView.annotations indexOfObject:annotation];
-    Hotel *hotel = self.hotelInfo[index];
-    UIImageView *hotelImageView = [[UIImageView alloc] init];
-    
-    [hotelImageView sd_setImageWithURL:[NSURL URLWithString:hotel.thumbnailURL]
-                             completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                 hotelImageView.image = image;
-                             }];
-    aView.leftCalloutAccessoryView = hotelImageView;
-    
     
     aView.annotation = annotation;
     
     return aView;
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    //gets called when button in accessory view is tapped... so  you dont need target/action
+}
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
+{
+    //set up MKAnnotationView callout accessory view. wait until this method is called to download image to show. You dont want to fetch image for all the pins so doing it hear lazily loads image
+
+    
+    NSInteger index;
+    
+    if ([view.annotation isKindOfClass:[MKAnnotationView class]]) {
+        index = [self.hotelInfo indexOfObject:view.annotation];
+    }
+    Hotel *hotel = self.hotelInfo[index];
+    
+    
+    if ([view.leftCalloutAccessoryView isKindOfClass:[UIImageView class]]) {
+        UIImageView *hotelImageView = (UIImageView *)view.leftCalloutAccessoryView;
+        [hotelImageView sd_setImageWithURL:[NSURL URLWithString:hotel.thumbnailURL]
+                                 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                     hotelImageView.image = image;
+                                 }];
+    }
+    
 }
 
 /*
