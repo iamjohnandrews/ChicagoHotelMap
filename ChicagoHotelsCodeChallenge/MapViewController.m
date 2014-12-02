@@ -9,6 +9,7 @@
 #import "MapViewController.h"
 #import "ListViewController.h"
 #import "Hotel.h"
+#import "UIImageView+WebCache.h"
 
 @interface MapViewController ()
 @property (strong, nonatomic) CLLocationManager *locationManager;
@@ -67,18 +68,39 @@
 #pragma MapKit Delegate methods
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 500, 500);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 400, 400);
     [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
     
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
-    MKAnnotationView *aView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"hotel"];
-    
+    MKAnnotationView *aView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"hotel"];
     if (!aView) {
         aView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"hotel"];
     }
+    
+    // If an existing pin view was not available, create one.
+    aView.canShowCallout = YES;
+//    aView.image = [UIImage imageNamed:@"pizza_slice_32.png"];
+//    aView.calloutOffset = CGPointMake(0, 32);
+    
+    // Add a detail disclosure button to the callout.
+    UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    aView.rightCalloutAccessoryView = rightButton;
+    
+    // Add an image to the left callout.
+//    UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pizza_slice_32.png"]];
+    NSUInteger index = [mapView.annotations indexOfObject:annotation];
+    Hotel *hotel = self.hotelInfo[index];
+    UIImageView *hotelImageView = [[UIImageView alloc] init];
+    
+    [hotelImageView sd_setImageWithURL:[NSURL URLWithString:hotel.thumbnailURL]
+                             completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                 hotelImageView.image = image;
+                             }];
+    aView.leftCalloutAccessoryView = hotelImageView;
+    
     
     aView.annotation = annotation;
     

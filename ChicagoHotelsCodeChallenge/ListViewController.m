@@ -13,7 +13,7 @@
 
 @interface ListViewController ()
 @property (strong, nonatomic) UIActivityIndicatorView *spinner;
-
+@property (strong, nonatomic) NSMutableArray *hotelImagesArray;
 @end
 
 @implementation ListViewController
@@ -24,6 +24,7 @@
     self.hotelListTableView.delegate = self;
     self.hotelListTableView.dataSource = self;
     self.hotelInfo = [self getHotelData];
+    self.hotelImagesArray = [NSMutableArray array];
 }
 
 - (NSArray *)getHotelData

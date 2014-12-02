@@ -13,5 +13,7 @@
 @interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) NSArray *hotelInfo;
+@property (strong, nonatomic) NSArray *hotelimages;
+
 
 @end
