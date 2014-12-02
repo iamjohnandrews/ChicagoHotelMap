@@ -23,13 +23,9 @@
     [super viewDidLoad];
     self.hotelListTableView.delegate = self;
     self.hotelListTableView.dataSource = self;
+    self.hotelListTableView.tintColor =  [UIColor blackColor];
     self.hotelInfo = [self getHotelData];
     self.hotelImagesArray = [NSMutableArray array];
-}
-
--(BOOL)prefersStatusBarHidden
-{
-    return YES;
 }
 
 - (NSArray *)getHotelData
@@ -89,12 +85,19 @@
     [listCell.hotelImageView sd_setImageWithURL:[NSURL URLWithString:individualHotel.thumbnailURL]
                                            completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                                                listCell.hotelImageView.image = [self imageWithImage:image];
-                                               [spinner stopAnimating];
+                                               if (spinner) {
+                                                   [spinner stopAnimating];
+                                                   listCell.accessoryView = nil;
+                                                   listCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                                               }
                                            }];
-    
+    if (!spinner) {
+        listCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
     
     return listCell;
 }
+
 
 - (UIImage *)imageWithImage:(UIImage *)image
 {
