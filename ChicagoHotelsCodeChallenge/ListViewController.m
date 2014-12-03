@@ -26,7 +26,7 @@
     self.hotelListTableView.dataSource = self;
 
     self.edgesForExtendedLayout = UIRectEdgeAll;
-    self.hotelListTableView.contentInset = UIEdgeInsetsMake([UIApplication sharedApplication].statusBarFrame.size.height * 2 + CGRectGetHeight(self.tabBarController.tabBar.frame), 0.0f, CGRectGetHeight(self.tabBarController.tabBar.frame), 0.0f);
+    self.hotelListTableView.contentInset = UIEdgeInsetsMake([UIApplication sharedApplication].statusBarFrame.size.height, 0.0f, CGRectGetHeight(self.tabBarController.tabBar.frame), 0.0f);
 
     self.hotelInfo = [self getHotelData];
     self.hotelImagesArray = [NSMutableArray array];
