@@ -83,14 +83,9 @@
 {
     //set up MKAnnotationView callout accessory view. wait until this method is called to download image to show. You dont want to fetch image for all the pins so doing it hear lazily loads image
 
-    
-    NSInteger index;
-    
-    if ([view.annotation isKindOfClass:[MKAnnotationView class]]) {
-
-    }
+    NSInteger index = [self.hotelPinsArray indexOfObject:view.annotation];
     Hotel *hotel = self.hotelInfo[index];
-    
+
     if ([view.leftCalloutAccessoryView isKindOfClass:[UIImageView class]]) {
         UIImageView *hotelImageView = (UIImageView *)view.leftCalloutAccessoryView;
         [hotelImageView sd_setImageWithURL:[NSURL URLWithString:hotel.thumbnailURL]
@@ -103,18 +98,18 @@
 
 #pragma mark - Navigation
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    if ([sender.annotation isKindOfClass:[MKAnnotationView class]]) {
-//        NSInteger index = [self.hotelPinsArray indexOfObject:view.annotation];
-//        Hotel *hotel = self.hotelInfo[index];
-//        
-//        if([segue.identifier isEqualToString:@"MapToHotelDetailsSegue"]) {
-//            ModalHotelViewController *modalHotelVC = (ModalHotelViewController *)segue.destinationViewController;
-//            modalHotelVC.selectedHotel = hotel;
-//        }
-//    }
-//}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([sender isKindOfClass:[MKAnnotationView class]]) {
+        NSInteger index = [self.hotelPinsArray indexOfObject:((MKAnnotationView *)sender).annotation];
+        Hotel *hotel = self.hotelInfo[index];
+        
+        if([segue.identifier isEqualToString:@"MapToHotelDetailsSegue"]) {
+            ModalHotelViewController *modalHotelVC = (ModalHotelViewController *)segue.destinationViewController;
+            modalHotelVC.selectedHotel = hotel;
+        }
+    }
+}
 
 
 @end
