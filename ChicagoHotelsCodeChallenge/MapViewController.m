@@ -14,6 +14,8 @@
 
 @interface MapViewController ()
 @property (strong, nonatomic) NSMutableArray *hotelPinsArray;
+@property (strong, nonatomic) UIImage *originalImage;
+
 @end
 
 @implementation MapViewController
@@ -61,7 +63,6 @@
         UIImageView *hotelImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 46.0f, 46.0f)];
         aView.leftCalloutAccessoryView = hotelImageView;
         
-        // Add a detail disclosure button to the callout.
         UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         aView.rightCalloutAccessoryView = rightButton;
     }
@@ -73,16 +74,12 @@
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    //gets called when button in accessory view is tapped... so  you dont need target/action. This is where you segue
-    
     [self performSegueWithIdentifier:@"MapToHotelDetailsSegue" sender:view];
 }
 
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
-    //set up MKAnnotationView callout accessory view. wait until this method is called to download image to show. You dont want to fetch image for all the pins so doing it hear lazily loads image
-
     NSInteger index = [self.hotelPinsArray indexOfObject:view.annotation];
     Hotel *hotel = self.hotelInfo[index];
 
@@ -90,7 +87,8 @@
         UIImageView *hotelImageView = (UIImageView *)view.leftCalloutAccessoryView;
         [hotelImageView sd_setImageWithURL:[NSURL URLWithString:hotel.thumbnailURL]
                                  completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                     hotelImageView.image = image;
+                                     self.originalImage = image;
+                                     hotelImageView.image = self.originalImage;
                                  }];
     }
 }
@@ -107,6 +105,7 @@
         if([segue.identifier isEqualToString:@"MapToHotelDetailsSegue"]) {
             ModalHotelViewController *modalHotelVC = (ModalHotelViewController *)segue.destinationViewController;
             modalHotelVC.selectedHotel = hotel;
+            modalHotelVC.originalImage = self.originalImage;
         }
     }
 }

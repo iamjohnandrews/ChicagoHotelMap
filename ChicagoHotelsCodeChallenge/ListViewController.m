@@ -125,6 +125,7 @@
     if([segue.identifier isEqualToString:@"ListToHotelDetailsSegue"]) {
         ModalHotelViewController *modalHotelVC = (ModalHotelViewController *)segue.destinationViewController;
         modalHotelVC.selectedHotel = self.hotelInfo[indexPath.row];
+        modalHotelVC.originalImage = ((ListTableViewCell *)sender).hotelImageView.image;
     }
 }
 

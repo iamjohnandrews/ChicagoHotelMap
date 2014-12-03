@@ -11,6 +11,7 @@
 
 @interface ModalHotelViewController : UIViewController
 @property (strong, nonatomic) Hotel *selectedHotel;
+@property (strong, nonatomic) UIImage *originalImage;
 @property (weak, nonatomic) IBOutlet UIImageView *hotelImage;
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *starRating;
