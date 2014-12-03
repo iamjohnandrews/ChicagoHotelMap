@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Hotel.h"
 
 @interface ModalHotelViewController : UIViewController
-
+@property (strong, nonatomic) Hotel *selectedHotel;
 @end
