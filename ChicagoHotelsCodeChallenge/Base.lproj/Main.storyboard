@@ -12,19 +12,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="Iie-Yd-3yv">
-                                <rect key="frame" x="0.0" y="20" width="320" height="500"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="Iie-Yd-3yv">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listCell" rowHeight="60" id="Rgc-3Y-bvq" customClass="ListTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="listCell" rowHeight="60" id="Rgc-3Y-bvq" customClass="ListTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rgc-3Y-bvq" id="xpD-ic-ziU">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ySd-yQ-xJK">
-                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="60"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="47" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xCT-mr-rd2">
@@ -39,6 +39,7 @@
                                         <connections>
                                             <outlet property="hotelImageView" destination="ySd-yQ-xJK" id="SEM-AQ-IgI"/>
                                             <outlet property="hotelNameLabel" destination="xCT-mr-rd2" id="Ugh-AO-lcF"/>
+                                            <segue destination="vac-D5-xxJ" kind="modal" identifier="ListToHotelDetailsSegue" id="P28-h1-SFZ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -49,7 +50,6 @@
                     <tabBarItem key="tabBarItem" title="List" id="eRp-G6-G2k"/>
                     <connections>
                         <outlet property="hotelListTableView" destination="Iie-Yd-3yv" id="uLp-Qh-IWJ"/>
-                        <segue destination="vac-D5-xxJ" kind="modal" identifier="ListToHotelDetailsSegue" id="cF0-ON-amx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -81,19 +81,20 @@
             </objects>
             <point key="canvasLocation" x="642" y="637"/>
         </scene>
-        <!--View Controller-->
+        <!--Modal Hotel View Controller-->
         <scene sceneID="Ksj-EY-e9c">
             <objects>
-                <viewController id="vac-D5-xxJ" sceneMemberID="viewController">
+                <viewController id="vac-D5-xxJ" customClass="ModalHotelViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cwh-vN-tC5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="oOT-Ch-ZK7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rwp-JK-5VU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1068" y="308"/>
+            <point key="canvasLocation" x="1122" y="300"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="akC-U0-BWH">
@@ -121,6 +122,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="cF0-ON-amx"/>
+        <segue reference="P28-h1-SFZ"/>
     </inferredMetricsTieBreakers>
 </document>

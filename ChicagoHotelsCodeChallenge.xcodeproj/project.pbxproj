@@ -19,6 +19,7 @@
 		7FD005E91A291A2400256892 /* Hotel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD005E81A291A2400256892 /* Hotel.m */; };
 		7FD005EB1A291C2700256892 /* hotels.json in Resources */ = {isa = PBXBuildFile; fileRef = 7FD005EA1A291C2700256892 /* hotels.json */; };
 		7FD005ED1A29204800256892 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD005EC1A29204800256892 /* MapKit.framework */; };
+		7FD005F21A2E69CD00256892 /* ModalHotelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD005F11A2E69CD00256892 /* ModalHotelViewController.m */; };
 		D02786659B32417A92D2E018 /* libPods-ChicagoHotelsCodeChallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F338F18D3E4476B27EE8BC /* libPods-ChicagoHotelsCodeChallenge.a */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,8 @@
 		7FD005EA1A291C2700256892 /* hotels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hotels.json; sourceTree = "<group>"; };
 		7FD005EC1A29204800256892 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7FD005EE1A2921C500256892 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7FD005F01A2E69CD00256892 /* ModalHotelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalHotelViewController.h; sourceTree = "<group>"; };
+		7FD005F11A2E69CD00256892 /* ModalHotelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalHotelViewController.m; sourceTree = "<group>"; };
 		C6DF53C8D9F346E888962DF6 /* Pods-ChicagoHotelsCodeChallenge.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChicagoHotelsCodeChallenge.xcconfig"; path = "Pods/Pods-ChicagoHotelsCodeChallenge.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,6 +161,8 @@
 				7FD005E21A291A0200256892 /* ListViewController.m */,
 				7FD005E41A291A1300256892 /* MapViewController.h */,
 				7FD005E51A291A1300256892 /* MapViewController.m */,
+				7FD005F01A2E69CD00256892 /* ModalHotelViewController.h */,
+				7FD005F11A2E69CD00256892 /* ModalHotelViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -317,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FD005F21A2E69CD00256892 /* ModalHotelViewController.m in Sources */,
 				7FD005E91A291A2400256892 /* Hotel.m in Sources */,
 				7FD005E01A2919F000256892 /* ListTableViewCell.m in Sources */,
 				7FD005BB1A29187E00256892 /* AppDelegate.m in Sources */,

@@ -23,7 +23,10 @@
     [super viewDidLoad];
     self.hotelListTableView.delegate = self;
     self.hotelListTableView.dataSource = self;
-    self.hotelListTableView.tintColor =  [UIColor blackColor];
+
+    self.edgesForExtendedLayout = UIRectEdgeAll;
+    self.hotelListTableView.contentInset = UIEdgeInsetsMake([UIApplication sharedApplication].statusBarFrame.size.height * 2 + CGRectGetHeight(self.tabBarController.tabBar.frame), 0.0f, CGRectGetHeight(self.tabBarController.tabBar.frame), 0.0f);
+
     self.hotelInfo = [self getHotelData];
     self.hotelImagesArray = [NSMutableArray array];
 }
@@ -111,14 +114,16 @@
     return newImage;
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
 }
-*/
+
 
 @end
