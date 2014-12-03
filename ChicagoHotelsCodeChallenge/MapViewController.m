@@ -89,7 +89,6 @@
     }
     Hotel *hotel = self.hotelInfo[index];
     
-    
     if ([view.leftCalloutAccessoryView isKindOfClass:[UIImageView class]]) {
         UIImageView *hotelImageView = (UIImageView *)view.leftCalloutAccessoryView;
         [hotelImageView sd_setImageWithURL:[NSURL URLWithString:hotel.thumbnailURL]
