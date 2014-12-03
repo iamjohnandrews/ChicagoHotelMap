@@ -10,8 +10,10 @@
 #import "ListViewController.h"
 #import "Hotel.h"
 #import "UIImageView+WebCache.h"
+#import "ModalHotelViewController.h"
 
 @interface MapViewController ()
+@property (strong, nonatomic) NSMutableArray *hotelPinsArray;
 @end
 
 @implementation MapViewController
@@ -34,17 +36,17 @@
 
 - (NSArray *)convertHotelObjectsIntoCoordinates:(NSArray *)hotelObjects
 {
-    NSMutableArray *hotelPinsArray = [NSMutableArray array];
+    self.hotelPinsArray = [NSMutableArray array];
     
     for (Hotel *hotel in hotelObjects) {
         MKPointAnnotation *myAnnotation = [[MKPointAnnotation alloc] init];
         myAnnotation.coordinate = CLLocationCoordinate2DMake((CLLocationDegrees)[hotel.latitude doubleValue], (CLLocationDegrees)[hotel.longitude doubleValue]);
         myAnnotation.title = hotel.name;
-        
-        [hotelPinsArray addObject:myAnnotation];
+
+        [self.hotelPinsArray addObject:myAnnotation];
     }
     
-    return (NSArray *)hotelPinsArray;
+    return (NSArray *)self.hotelPinsArray;
 }
 
 #pragma MapKit Delegate methods
@@ -56,7 +58,7 @@
         aView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"hotel"];
         aView.canShowCallout = YES;
         
-        UIImageView *hotelImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50.0f, 50.0f)];
+        UIImageView *hotelImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 46.0f, 46.0f)];
         aView.leftCalloutAccessoryView = hotelImageView;
         
         // Add a detail disclosure button to the callout.
@@ -73,7 +75,7 @@
 {
     //gets called when button in accessory view is tapped... so  you dont need target/action. This is where you segue
     
-    [self performSegueWithIdentifier:@"placeholder" sender:view];
+    [self performSegueWithIdentifier:@"MapToHotelDetailsSegue" sender:view];
 }
 
 
@@ -85,7 +87,7 @@
     NSInteger index;
     
     if ([view.annotation isKindOfClass:[MKAnnotationView class]]) {
-        index = [self.hotelInfo indexOfObject:view.annotation];
+
     }
     Hotel *hotel = self.hotelInfo[index];
     
@@ -96,19 +98,23 @@
                                      hotelImageView.image = image;
                                  }];
     }
-    
 }
 
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if ([sender.annotation isKindOfClass:[MKAnnotationView class]]) {
+//        NSInteger index = [self.hotelPinsArray indexOfObject:view.annotation];
+//        Hotel *hotel = self.hotelInfo[index];
+//        
+//        if([segue.identifier isEqualToString:@"MapToHotelDetailsSegue"]) {
+//            ModalHotelViewController *modalHotelVC = (ModalHotelViewController *)segue.destinationViewController;
+//            modalHotelVC.selectedHotel = hotel;
+//        }
+//    }
+//}
 
 
 @end
