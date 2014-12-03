@@ -84,7 +84,7 @@
         <!--Modal Hotel View Controller-->
         <scene sceneID="Ksj-EY-e9c">
             <objects>
-                <viewController id="vac-D5-xxJ" customClass="ModalHotelViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vac-D5-xxJ" customClass="ModalHotelViewController" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="Cwh-vN-tC5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
